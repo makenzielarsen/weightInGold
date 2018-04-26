@@ -1,0 +1,52 @@
+html {
+  background: url("/static/images/gold.jpg");
+  background-repeat: repeat-y;
+  background-size: 100%;
+}
+
+body {
+  border: 1px solid black;
+  background-color: #ffe0f5;
+  color: #fe72d0;
+  text-align: center;
+  height: 500px;
+  margin: 50px;
+}
+
+h1 {
+  font-family: "Great Vibes", cursive;
+  text-shadow: 0 1px 1px #fff;
+}
+
+h2 {
+  color: #7a7c7f;
+  font-family: "Libre Baskerville", serif;
+  line-height: 45px;
+  text-align: center;
+  text-shadow: 0 1px 1px #fff;
+  padding-top: 20px;
+}
+
+label {
+  color: #555;
+}
+
+button {
+  background-color: white;
+  color: black;
+  border: 1px solid #555555;
+  border-radius: 8px;
+}
+
+input[type="text"] {
+  width: 25%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border: 2px solid #555;
+}

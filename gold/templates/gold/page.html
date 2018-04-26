@@ -1,0 +1,26 @@
+<!DOCTYPE html> {% load staticfiles %}
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/page.css' %}">
+    <script type="text/javascript" src="{% static 'scripts/page.js' %}"></script>
+    <title>
+        Your Weight in Gold!
+    </title>
+</head>
+
+<body id="body">
+    <h1>
+        Your Weight in Gold!
+    </h1>
+    <h2>
+        This app was made to pull the most current dollar value of gold per troy ounce and convert you weight into troy ounces to
+        tell you how many dollars your weight in gold would be!
+    </h2>
+    <label>Enter your weight here:</label>
+    <input type="text" id="weightField">
+    <button onclick="page.clickedEnter()">Enter</button>
+</body>
+
+</html>
