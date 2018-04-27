@@ -2,8 +2,6 @@ from django.shortcuts import render, redirect
 from api.models import Conversion
 from django.http import JsonResponse
 
-# goldRUrl = "https://www.quandl.com/api/v3/datasets/LBMA/GOLD.json?api_key=yohchH9Uyg7_EzdN6cJP&column_index=2&start_date=2018-02-04&end_date=2018-02-09"
-
 
 def convert(request):
     to_units = request.GET.get('to', 't_oz')
@@ -17,6 +15,7 @@ def convert(request):
 
 
 def init(request):
+
     table = {"mg": {"g": 1000, "kg": 1000000, "t_oz": 0.0000321507, "oz": 28349.5, "lbs": 453592, "ton": 907185000},
              "g": {"mg": 0.001, "kg": 1000, "t_oz": 0.0321507, "oz": 28.3495, "lbs": 453.592, "ton": 907185},
              "kg": {"mg": 0.00001, "g": 0.001, "t_oz": 32.1507, "oz": 0.0283495, "lbs": 0.453592, "ton": 907.185},
@@ -29,4 +28,4 @@ def init(request):
             temp = Conversion(to_units=to_unit,
                               from_units=from_unit, value=value)
             temp.save()
-    return redirect('http://127.0.0.1:8000/api/convert/?from=lbs&to=t_oz&value=120')
+    return redirect('/')
