@@ -2,11 +2,16 @@ var page = (function() {
   var dollarsPerTroyOunce = 1;
 
   function getGoldData() {
-    // TODO: Make current date
+    let today = new Date();
+    let day = today.getDate();
+    let month = today.getMonth() + 1;
+    let year = today.getFullYear();
+    let endDate = `${year}-${month}-${day}`;
+
     httpGetAsync(
-      "https://www.quandl.com/api/v3/datasets/LBMA/GOLD.json?api_key=yohchH9Uyg7_EzdN6cJP&column_index=2&start_date=2018-04-19&end_date=2018-04-24",
+      `https://www.quandl.com/api/v3/datasets/LBMA/GOLD.json?api_key=yohchH9Uyg7_EzdN6cJP&column_index=2&start_date=2018-04-19&end_date=${endDate}`,
       response => {
-        console.log(response.dataset.data[0][1]);
+        console.log(response.dataset.data[0][0]);
         dollarsPerTroyOunce = response.dataset.data[0][1];
       }
     );
